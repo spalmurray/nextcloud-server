@@ -109,6 +109,8 @@ jobs:
       - name: Upload test results
         if: ${{ !cancelled() && matrix.coverage }}
         uses: codecov/test-results-action@v1.1.0
+        with:
+          flags: phpunit-memcached
 
       - name: Print logs
         if: always()

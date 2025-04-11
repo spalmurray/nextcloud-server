@@ -99,6 +99,8 @@ jobs:
       - name: Upload test results
         if: ${{ !cancelled() && matrix.coverage }}
         uses: codecov/test-results-action@v1.1.0
+        with:
+          flags: phpunit-files-external-webdav
 
   files-external-webdav-summary:
     runs-on: ubuntu-latest-low

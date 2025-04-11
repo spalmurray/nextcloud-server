@@ -167,6 +167,8 @@ jobs:
       - name: Upload test results
         if: ${{ !cancelled() && matrix.coverage }}
         uses: codecov/test-results-action@v1.1.0
+        with:
+          flags: phpunit-mysql
 
       - name: Print logs
         if: always()
